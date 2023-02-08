@@ -11,10 +11,6 @@ const GoalItem = ({ item, onRemove }) => {
     onRemove(id);
   };
 
-  const handleDone = () => {
-    
-  };
-
   return (
     <div className="goal-item-container">
       <div className="goal-item-right">
@@ -22,11 +18,8 @@ const GoalItem = ({ item, onRemove }) => {
         <p>{description}</p>
       </div>
       <div className="goal-item-left">
-        <button onClick={handleDone}>
-          <i class="fa-regular fa-circle-check"></i>
-        </button>
         <button onClick={handleRemove}>
-          <i class="fa-regular fa-circle-xmark"></i>
+          <i class="fa-solid fa-trash"></i>
         </button>
       </div>
     </div>

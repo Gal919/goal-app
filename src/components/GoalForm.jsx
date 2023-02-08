@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './styles/GoalForm.scss';
+import "./styles/GoalForm.scss";
 
 const GoalForm = ({ onAdd }) => {
   const [input, setInput] = useState({
@@ -30,31 +30,26 @@ const GoalForm = ({ onAdd }) => {
 
   return (
     <div className="goal-form-container">
-    <div className="goal-form-right">
       <form id="goal-form" onSubmit={handleSubmit}>
-        <label>
-          Title
-          <input
-            type="text"
-            name="title"
-            value={input.title}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Description
-          <input
-            type="text"
-            name="description"
-            value={input.description}
-            onChange={handleChange}
-          />
-        </label>
+        <label>Title</label>
+        <input
+          type="text"
+          name="title"
+          value={input.title}
+          onChange={handleChange}
+        />
+        <label>Description</label>
+        <input
+          type="text"
+          name="description"
+          value={input.description}
+          onChange={handleChange}
+        />
       </form>
-      </div>
-      <div className="goal-form-left">
-      <button form="goal-form" type="submit">Set Goal</button>
-      </div>
+
+      <button form="goal-form" type="submit">
+        Set Goal
+      </button>
     </div>
   );
 };

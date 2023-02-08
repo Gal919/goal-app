@@ -1,9 +1,10 @@
 .goal-item-container {
     display: flex;
     justify-content: space-between;
-    padding: 10px 10px 10px 20px;
-    background-color: #f0e4fa; 
+    padding: 15px 15px 15px 20px;
     margin-bottom: 5px;
+    background-color: #F8F9FB;
+    border-radius: 20px;
 
     .goal-item-right {
         display: flex;
@@ -11,13 +12,11 @@
         overflow-wrap: anywhere;
 
         h3{
-            color: #9069B0;
             margin-bottom: 10px;
         };
     
         p {
             font-size: 17px;
-            color: #9069B0;
         };
     };
 
@@ -30,8 +29,7 @@
             background-color: transparent;
             
             i {
-                font-size: 22px;
-                color: #9069B0;
+                font-size: 15px;
                 cursor: pointer;
 
                 &:first-child {

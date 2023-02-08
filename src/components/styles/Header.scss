@@ -1,6 +1,15 @@
+@import "../../colors.scss";
+
 .header-container {
     display: flex;
     justify-content: center;
     padding: 40px;
-    color:#9069B0;
+
+    i {
+        display: flex;
+        align-items: center;
+        font-size: 30px;
+        margin-left: 10px;
+        color: $color-blue;
+    };
 };

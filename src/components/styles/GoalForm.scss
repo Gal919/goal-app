@@ -1,46 +1,51 @@
+@import '../../colors.scss';
+
 .goal-form-container {
     display: flex;
-    justify-content: space-between;
-    flex: 1 0 20px;
+    flex-direction: column;
     align-items: center;
     width: 80%;
-    background-color:#f0e4fa;
-    padding: 20px;
     margin-bottom: 20px;
-}
 
-.goal-form-right {
+    #goal-form {
+        display: flex;
+        flex-direction: column;  
+        width: inherit;
+    };
+
     label {
         display: inline-flex;
-        width: -webkit-fill-available;
         flex-direction: column;
-        color: #9069B0;
         margin-top: 7px;
+    };
 
-        input {
-            margin: 5px 10px 0 0;
-            border: 1px solid #9069B0;
-            border-radius: 10px;
-            font-size: 15px;
-            padding: 7px 5px;
+    input {
+        height: 40px;
+        margin: 5px 10px 0 0;
+        border: 1px solid $color-dark-blue;
+        border-radius: 50px;
+        font-size: 17px;
+        padding: 5px 15px;
+        color: $color-dark-blue;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
-            &:focus {
-                outline: none;
-              };
-        };
+        &:focus, &:hover{
+            outline: 1px solid $color-dark-blue;
+          };
+    };
+
+    button {
+        background-color: $color-dark-blue;
+        margin-top: 30px;
+        border-radius: 50px;
+        font-size: 17px;
+        padding: 7px 20px;
+        cursor: pointer;
+        color: $color-white;
     };
 };
 
-.goal-form-left {
-    button {
-        background-color: #9069B0;
-        border: none;
-        border-radius: 15px;
-        font-size: 17px;
-        color: #ffffff;
-        padding: 7px 12px;
-        cursor: pointer;
-    }
-}
+
+
 
 
