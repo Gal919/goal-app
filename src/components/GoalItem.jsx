@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/GoalItem.scss";
 
-const GoalItem = ({ item, onRemove }) => {
+const GoalItem = ({ item, onRemove, addToCheckedList, removeFromCheckedList }) => {
   const {
     id,
     text: { title, description },
@@ -11,16 +11,28 @@ const GoalItem = ({ item, onRemove }) => {
     onRemove(id);
   };
 
+  const handleIsChecked = e => {
+    const checked = e.target.checked;
+    if(checked) {
+      addToCheckedList(id);
+    }else {
+      removeFromCheckedList(id);
+    };
+  };
+
   return (
     <div className="goal-item-container">
-      <div className="goal-item-right">
-        <h3>{title} </h3>
-        <p>{description}</p>
-      </div>
-      <div className="goal-item-left">
-        <button onClick={handleRemove}>
-          <i class="fa-solid fa-trash"></i>
-        </button>
+      <input type="checkbox" onChange={handleIsChecked}/>
+      <div className="goal-item-row">
+        <div className="goal-item-text">
+          <h4>{title} </h4>
+          <p>{description}</p>
+        </div>
+        <div className="goal-item-left">
+          <button onClick={handleRemove}>
+            <i className="fa-solid fa-trash"></i>
+          </button>
+        </div>
       </div>
     </div>
   );
