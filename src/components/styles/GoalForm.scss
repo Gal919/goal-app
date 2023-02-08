@@ -1,0 +1,46 @@
+.goal-form-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 0 20px;
+    align-items: center;
+    width: 80%;
+    background-color:#f0e4fa;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.goal-form-right {
+    label {
+        display: inline-flex;
+        width: -webkit-fill-available;
+        flex-direction: column;
+        color: #9069B0;
+        margin-top: 7px;
+
+        input {
+            margin: 5px 10px 0 0;
+            border: 1px solid #9069B0;
+            border-radius: 10px;
+            font-size: 15px;
+            padding: 7px 5px;
+
+            &:focus {
+                outline: none;
+              };
+        };
+    };
+};
+
+.goal-form-left {
+    button {
+        background-color: #9069B0;
+        border: none;
+        border-radius: 15px;
+        font-size: 17px;
+        color: #ffffff;
+        padding: 7px 12px;
+        cursor: pointer;
+    }
+}
+
+

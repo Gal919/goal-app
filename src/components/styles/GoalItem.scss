@@ -1,0 +1,45 @@
+.goal-item-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    background-color: #f0e4fa; 
+    margin-bottom: 5px;
+
+    .goal-item-right {
+        display: flex;
+        flex-direction: column;
+        overflow-wrap: anywhere;
+
+        h3{
+            color: #9069B0;
+            margin-bottom: 10px;
+        };
+    
+        p {
+            font-size: 17px;
+            color: #9069B0;
+        };
+    };
+
+    .goal-item-left {
+        display: flex;
+        justify-content: center;
+
+        button {
+            border: none;
+            background-color: transparent;
+            
+            i {
+                font-size: 22px;
+                color: #9069B0;
+                cursor: pointer;
+
+                &:first-child {
+                   margin-right: 10px;
+                };
+
+            }
+        };
+    };
+
+};
