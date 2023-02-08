@@ -16,7 +16,6 @@
     label {
         display: inline-flex;
         flex-direction: column;
-        margin-top: 7px;
     };
 
     input {
@@ -31,12 +30,18 @@
 
         &:focus, &:hover{
             outline: 1px solid $color-dark-blue;
-          };
+        };
     };
 
+    span {
+        color: red;
+        margin: 10px 0;
+        font-size: 15px;
+    };
+               
     button {
         background-color: $color-dark-blue;
-        margin-top: 30px;
+        margin-top: 5px;
         border-radius: 50px;
         font-size: 17px;
         padding: 7px 20px;
