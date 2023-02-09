@@ -29,15 +29,25 @@ const Body = () => {
   };
 
   const handleMarkAsDone = () => {
-    console.log('is marked');
+    const updatedList = [...list];
+    updatedList.forEach((item) => {
+      if (item.isChecked === true) return (item.status = "done");
+    });
+    setList(updatedList);
   };
 
-  return <div className="body-container">
-    <GoalForm onAdd={addGoal}/>
-    <button onClick={handleDeleteSelected}>Delete Selected</button>
-    <button onClick={handleMarkAsDone}>Mark as Done</button>
-    <GoalList GoalList={list} onRemove={removeGoal} updateCheckedValues={updateCheckedValues} />
-  </div>;
+  return (
+    <div className="body-container">
+      <GoalForm onAdd={addGoal} />
+      <button onClick={handleDeleteSelected}>Delete Selected</button>
+      <button onClick={handleMarkAsDone}>Mark as Done</button>
+      <GoalList
+        GoalList={list}
+        onRemove={removeGoal}
+        updateCheckedValues={updateCheckedValues}
+      />
+    </div>
+  );
 };
 
 export default Body;

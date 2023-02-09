@@ -1,3 +1,5 @@
+@import '../../colors.scss';
+
 .goal-item-container {
     display: flex;
     
@@ -26,6 +28,13 @@
         
             p {
                 font-size: 17px;
+            };
+        };
+
+        .goal-item-text.done{
+            h4, p{
+                color: $color-gray;
+                text-decoration: line-through;
             };
         };
     
