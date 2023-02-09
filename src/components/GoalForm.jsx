@@ -24,6 +24,8 @@ const GoalForm = ({ onAdd }) => {
       onAdd({
         id: Math.floor(Math.random() * 10000),
         text: input,
+        isChecked: false,
+        isDisabeld: false,
       });
   
       setInput({

@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles/GoalItem.scss";
 
-const GoalItem = ({ item, onRemove, addToCheckedList, removeFromCheckedList }) => {
+const GoalItem = ({ item, onRemove, updateCheckedValues }) => {
   const {
     id,
-    text: { title, description },
+    text: { title, description }
   } = item;
 
   const handleRemove = () => {
@@ -13,11 +13,7 @@ const GoalItem = ({ item, onRemove, addToCheckedList, removeFromCheckedList }) =
 
   const handleIsChecked = e => {
     const checked = e.target.checked;
-    if(checked) {
-      addToCheckedList(id);
-    }else {
-      removeFromCheckedList(id);
-    };
+    updateCheckedValues(id, checked);
   };
 
   return (

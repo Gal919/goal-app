@@ -1,13 +1,8 @@
-import React from 'react';
-import GoalItem from './GoalItem';
+import React from "react";
+import GoalItem from "./GoalItem";
 import "./styles/GoalList.scss";
 
-const GoalList = ({
-  GoalList,
-  onRemove,
-  addToCheckedList,
-  removeFromCheckedList,
-}) => {
+const GoalList = ({ GoalList, onRemove, updateCheckedValues }) => {
   return (
     <div className="goal-list-container">
       {GoalList.map((item) => (
@@ -15,8 +10,7 @@ const GoalList = ({
           key={item.id}
           item={item}
           onRemove={onRemove}
-          addToCheckedList={addToCheckedList}
-          removeFromCheckedList={removeFromCheckedList}
+          updateCheckedValues={updateCheckedValues}
         />
       ))}
     </div>

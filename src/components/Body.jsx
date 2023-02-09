@@ -5,7 +5,6 @@ import "./styles/Body.scss";
 
 const Body = () => {
   const [list, setList] = useState([]);
-  const [checkedList, setCheckedList] = useState([]);
 
   const addGoal = item => {
     setList([...list, item]);
@@ -16,39 +15,28 @@ const Body = () => {
     setList(newList);
   };
 
-  const addToCheckedList = id => {
-    setCheckedList([...checkedList, id]);
-  };
+  const updateCheckedValues = (id, checked) => {
+      const updatedList = [...list];
+      const item = updatedList.find(item => item.id === id);
+      item.isChecked = checked ? true : false; 
 
-  const removeFromCheckedList = id => {
-    const updateCheckedList = checkedList.filter(item => item !== id);
-    setCheckedList(updateCheckedList);
+      setList(updatedList);
   };
 
   const handleDeleteSelected = () => {
-    const copyObjArr = [...list];
-
-    for (let i = 0; i < copyObjArr.length; i++) {
-      const obj = copyObjArr[i];
-  
-      if (checkedList.indexOf(obj.id) !== -1) {
-        copyObjArr.splice(i, 1);
-        i--;
-      };
+    const newList = list.filter(item => item.isChecked === false);
+    setList(newList);
   };
 
-  console.log(copyObjArr);
-  setList(copyObjArr)
- 
-
-  
-    
+  const handleMarkAsDone = () => {
+    console.log('is marked');
   };
 
   return <div className="body-container">
     <GoalForm onAdd={addGoal}/>
     <button onClick={handleDeleteSelected}>Delete Selected</button>
-    <GoalList GoalList={list} onRemove={removeGoal} addToCheckedList={addToCheckedList} removeFromCheckedList={removeFromCheckedList}/>
+    <button onClick={handleMarkAsDone}>Mark as Done</button>
+    <GoalList GoalList={list} onRemove={removeGoal} updateCheckedValues={updateCheckedValues} />
   </div>;
 };
 
