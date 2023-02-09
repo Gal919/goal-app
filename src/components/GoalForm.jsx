@@ -6,7 +6,6 @@ const GoalForm = ({ onAdd }) => {
     title: "",
     description: "",
   });
-
   const [formError, setFormError] = useState({});
 
   const handleChange = e => {

@@ -3,24 +3,34 @@
 .goal-item-container {
     display: flex;
     
-    input {
-        margin-right: 10px;
-    };
-
-    
     .goal-item-row {
         display: flex;
         width: 100%;
         padding: 15px 15px 15px 20px;
         margin-bottom: 5px;
-        background-color: #F8F9FB;
+        background-color: $color-light-gray;
         border-radius: 20px;
-    
+        
+        .goal-item-checkbox {
+            display: flex;
+            align-items: center;
+            border-right: 1px solid $color-medium-gray;
+            margin-right: 10px;
+
+            input[type=checkbox] {
+                margin-right: 10px;
+
+                &:checked {
+                    accent-color: $color-blue;
+                };
+            };
+        };
     
         .goal-item-text {
             display: flex;
             flex-direction: column;
             overflow-wrap: anywhere;
+            margin-right: 10px;
     
             h4{
                 margin-bottom: 10px;
