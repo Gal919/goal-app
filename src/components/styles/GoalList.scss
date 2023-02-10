@@ -50,4 +50,12 @@
     @media screen and (max-width: 768px) {
         width: 90%;
     };
+
+    @media screen and (max-width: 480px) {
+        width: 90%;
+        
+        .goal-list-buttons {
+            justify-content: space-between;
+        };
+    };
 };
