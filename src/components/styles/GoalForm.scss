@@ -4,16 +4,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    padding: 10px;
+    width: 55%;
+    padding: 15px;
     margin-bottom: 20px;
     background-color: $color-light-gray;
     border-radius: 20px;
-
     #goal-form {
         display: flex;
         flex-direction: column;  
-        width: inherit;
+        width: 90%;
     };
 
     label {
@@ -50,6 +49,22 @@
         padding: 7px 20px;
         cursor: pointer;
         color: $color-white;
+    };
+
+    @media screen and (max-width: 1200px) {
+        width: 70%;
+
+        #goal-form { 
+            width: 90%;
+        };
+    };
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+
+        #goal-form { 
+            width: 90%;
+        };
     };
 };
 

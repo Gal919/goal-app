@@ -13,7 +13,7 @@ const Body = () => {
 
   const removeGoal = (id, checked) => {
     const newList = list.filter(item => item.id !== id);
-    setCheckedCount(pre => checked ? pre - 1 : pre);
+    setCheckedCount(prev => checked ? prev - 1 : prev);
     setList(newList);
   };
 
@@ -22,13 +22,13 @@ const Body = () => {
       const item = updatedList.find(item => item.id === id);
       item.isChecked = checked ? true : false; 
 
-      setCheckedCount(pre => checked ?  pre + 1 : pre - 1);
+      setCheckedCount(prev => checked ?  prev + 1 : prev - 1);
       setList(updatedList);
   };
 
   const handleDeleteSelected = () => {
     const newList = list.filter(item => item.isChecked === false);
-    setCheckedCount(pre => pre - (list.length - newList.length));
+    setCheckedCount(prev => prev - (list.length - newList.length));
     setList(newList);
   };
 
@@ -36,7 +36,7 @@ const Body = () => {
     const updatedList = [...list];
     updatedList.forEach((item) => {
       if (item.isChecked === true) {
-        setCheckedCount(pre => pre - 1)
+        setCheckedCount(prev => prev - 1)
         item.isChecked = false;
         item.status = 'done';
       };
